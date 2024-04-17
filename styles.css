@@ -4,6 +4,15 @@ body, h1, h2, h3, ul, li {
     padding: 0;
 }
 
+
+img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+
+
+}
+
 /* Text Style */
 .about p {
     color:black
@@ -14,8 +23,9 @@ body, h1, h2, h3, ul, li {
 nav {
     background-color: white;
     color: black;
-    padding: 10px 50px;
-
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
 
 }
 
@@ -26,7 +36,7 @@ nav ul {
 }
 
 nav ul li {
-    display: inline-flex;
+    display: inline;
     margin: 0 1rem;
 }
 
@@ -37,15 +47,22 @@ nav ul li a {
 
 /* Hero Section styles */
 .hero {
-    background-image: url('https://dummyimage.com/600x400/343a40/6c757d');
+    background-image: url('./public/1.jpg');
     background-size: cover;
     background-position: center;
+    padding: 0 4em;
+    max-width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     text-align: center;
+
+    .page-title {
+        font-size: xxx-large;
+        text-align: center;
+    }
 }
 
 /* About Section styles */
@@ -72,7 +89,7 @@ nav ul li a {
 }
 
 .about img {
-    max-width: 100%;
+    max-width: 150px;
     height: auto;
     border-radius: 50%;
     /* add drop shadow */
@@ -84,67 +101,52 @@ nav ul li a {
     padding: 50px 50px;
     text-align: center;
 }
-/* 
-.portfolio-grid {
-    margin: 50px 20px;
-    display: grid;
-    grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
-    grid-gap: 20px;
-}
-
-.portfolio-item p {
-    background-color: white;
-    color: black;
-    border-width: 1pt;
-    border-color: black;
-    border-style: solid;
-    padding: 10px;
-    margin: 5px 60px;
-
-}
-.portfolio-item img  {
-    max-width: 100%;
-    height: auto;
-} */
 
 /* project post styles */
 .project-post {
-    height: auto;
-    margin: 0 auto;
-    border-top: 1px solid #ccc;
-    padding: 20px;
-    margin: 0px 50px;
-}
-
-.img-container {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
+    gap: 1em;
     justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    padding: 20px;
+    border-top: 1px solid #ccc;
+    padding: 2em;
+    min-width: 400px;
+    
+    img {
+        max-height: 400px;
+        max-width: 400px;
+        margin-bottom: 20px;
+        }
 
-}
-
-.project-post img {
-    width: 400px;
-    height: 400px;
-    margin: 5px;
-}
-
-.project-post p {
-    text-align: left;
+.project-text {
     max-width: 400px;
+    padding: 1em;
+    }
 }
 
+@media only screen and (width: 768px) {
 
-.post-content {
-    padding: 20px;
-    width: 300px;
-    font-size: 0.9em;
-    align-items: start;
+    nav ul li {
+        justify-content: space-around;
+    }
+    .project-post {
+    display: block;
+    max-width: 400px;
+    height: 1000px;
+    overflow-y: scroll;
+    img {
+        padding: 0;
+        margin: 0;
+        max-width: inherit;
+    }
+
 }
-
+    .project-text {
+        text-justify: start;
+        max-width: 400px;
+    }
+}
 
 
 /* Footer styles */
